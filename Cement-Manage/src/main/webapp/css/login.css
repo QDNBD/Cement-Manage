@@ -1,0 +1,105 @@
+body {
+    background: white;
+}
+.cot {
+    width: 80%;
+    margin: 0 auto;
+    border: 1px solid #d4d2d2;
+    background: #f6f4f4;
+}
+
+.box-bu {
+    margin-left: 15px;
+    color: blue;
+    text-align: left;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.box-ti {
+    text-align: center;
+    font: 40px/60px "宋体";
+    color: blue;
+    margin: 20px 0;
+    font-weight: bold;
+}
+.container {
+    display: block;
+    position: relative;
+}
+
+.container-left {
+    display: inline-block;
+    position: relative;
+    width: 60%;
+    height: 500px;
+    border: 1px solid #d4d2d2;
+    overflow: hidden;
+}
+
+.container-left img{
+    display: inline-block;
+    position: relative;
+    height: 500px;
+    float: left;
+
+}
+
+.container-right {
+    display: inline-block;
+    position: relative;
+    width: 39%;
+    float: right;
+    border: 1px solid #d4d2d2;
+    border-radius: 17px;
+}
+
+.con-login {
+    background: white;
+    border: 5px solid white;
+    border-radius: 15px;
+    padding: 10px 20px 20px 20px;
+    line-height: 2;
+    font-weight: bold;
+    min-width: 200px;
+    overflow: auto;
+}
+
+.con-login p {
+    text-align: center;
+    font: 30px/40px "宋体";
+    font-weight: bold;
+}
+
+table tr td {
+    text-align: center;
+}
+
+button {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 40px;
+    background-color: #1c98e5;
+    text-align: center;
+    width: 100%;
+    text-decoration-color: black;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.ahref {
+    text-align: center;
+    border: 1px solid white;
+    background: antiquewhite
+}
+
+a:hover {background-color:#FF704D;}
+a:active {background-color: #4d7fff;}
+
+.form-group {
+    margin: 10px 0;
+    padding: 15px 10px;
+    border: 1px solid black;
+    border-radius: 15px;
+    color: #e77d7a;
+}

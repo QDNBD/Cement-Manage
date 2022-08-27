@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加原材料</title>
+    <link rel="stylesheet" type="text/css" href="css/currentAll.css"/>
+</head>
+<body>
+<div class="dvcontent">
+  <div>
+    <div class="tabs">
+      <div class="hd">
+        <p>添加原材料 </p>
+      </div>
+      <div class="bd">
+          <div class="am-cf admin-main">
+
+            <div class="am-cf admin-main">
+              <div class="admin-content">
+                <div class="admin-content-body">
+                    <div class="am-form">
+                      <form class="am-form-horizontal"
+                            action="materialsadd" method="post">
+                        <div class="am-form-group">
+                          <label for="name" class="am-u-sm-3 am-form-label">
+                            材料名称</label>
+                          <div class="am-u-sm-9">
+                            <input type="text" id="name" required
+                                   placeholder="材料名称" name="name">
+                            <small>材料名称</small>
+                          </div>
+                        </div>
+
+                        <div class="am-form-group">
+                          <label for="atype" class="am-u-sm-3 am-form-label">
+                            材料型号</label>
+                          <div class="am-u-sm-9">
+                            <input type="text" id="atype" required
+                                   placeholder="材料型号" name="atype">
+                            <small>材料型号</small>
+                          </div>
+                        </div>
+                        <div class="am-form-group">
+                          <label for="stock" class="am-u-sm-3 am-form-label">
+                            数量</label>
+                          <div class="am-u-sm-9">
+                            <input type="text" id="stock" required
+                                   placeholder="数量" name="stock">
+                            <small>数量</small>
+                          </div>
+                        </div>
+                        <div class="am-form-group">
+                          <label for="unit" class="am-u-sm-3 am-form-label">
+                            单位</label>
+                          <div class="am-u-sm-9">
+                            <input type="text" id="unit" required
+                                   placeholder="单位" name="unit">
+                            <small>单位</small>
+                          </div>
+                        </div>
+                        <div class="am-form-group">
+                          <label for="price" class="am-u-sm-3 am-form-label">
+                            材料价格</label>
+                          <div class="am-u-sm-9">
+                            <input type="text" id="price" required
+                                   placeholder="材料价格" name="price">
+                            <small>材料价格</small>
+                          </div>
+                        </div>
+                        <div class="am-form-group">
+                          <div class="am-u-sm-9 am-u-sm-push-3">
+                            <input type="submit" class="am-btn am-btn-success"
+                                   value="添 加"/>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+            </div>
+          </div>
+          <!--tab end-->
+
+        <script src="js/jquery-1.7.2.min.js" ></script>
+        <script src="js/plugs/jquery.SuperSlide.source.js"></script>
+        <script>
+          $(function () {
+            $(".tabs").slide({trigger: "click"});
+          });
+        </script>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

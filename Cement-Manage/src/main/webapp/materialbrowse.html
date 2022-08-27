@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>原材料入库记录</title>
+    <style>
+      body {
+        background: #d8eeea;
+      }
+
+      table{
+        width: 840px;
+        margin: 0 auto;
+        border-collapse: collapse;
+        background: white;
+      }
+
+      .table thead{
+        border: 1px solid black;
+      }
+
+      .table thead tr th{
+        font-size: 20px;
+        padding: 5px;
+        text-align: center;
+        text-decoration: none;
+        border: 1px solid #99b0da;
+      }
+
+      th {
+        padding: 0 10px;
+        border: 1px solid pink;
+        font: 20px/50px "微软雅黑";
+        text-align: center;
+      }
+
+      td {
+        padding: 0 10px;
+        border: 1px solid pink;
+        font: 18px/40px "微软雅黑";
+        text-align: center;
+      }
+
+    </style>
+  <script src = "js/jquery-1.7.2.min.js"> </script>
+  <!--js代码 要被执行 需要导入上面的库-->
+  <script>
+    alert("进入原材料入库记录页面")
+    //进入此页面 该函数立即执行
+    $(function () {
+      $.ajax({
+        url:"/Cement_Manage_war_exploded/materialsBrow",
+        type:"get",
+        dataType:"json",
+        success:function (data) {
+          console.log(data);
+          var s=" ";
+          for (var i = 0; i <data.length ; i++) {
+            s+="<tr>";
+            s+="<td>"+data[i].id+"</td>>";
+            s+="<td>"+data[i].name+"</td>>";
+            s+="<td>"+data[i].type+"</td>>";
+            s+="<td>"+data[i].stock+"</td>>";
+            s+="<td>"+data[i].unit+"</td>>";
+            s+="<td>"+data[i].price+"</td>>";
+            s+="<td>"+data[i].createTime+"</td>>";
+            s+="</tr>";
+          }
+          console.log(s);
+          $("#tbRecord>tbody").html(s);
+        }
+      })
+    });
+  </script>
+
+</head>
+<body>
+<div class="dvcontent">
+  <div>
+    <!--tab start-->
+    <div class="tabs" style="height: 800px; overflow:scroll">
+      <div class="hd">
+        <p class="on" style="box-sizing: initial;-webkit-box-sizing: initial;">浏览原材料入库记录 </p>
+      </div>
+      <div class="bd">
+        <div id="dv1">
+          <!-- 规定元素的类名（classname）  规定元素的唯一 id-->
+          <table class="table" id="tbRecord">
+            <thead><!--<thead> 标签定义表格的表头。该标签用于组合 HTML 表格的表头内容。-->
+            <tr><!--tr 元素包含一个或多个 th 或 td 元素。-->
+              <th>编号</th><!--表头单元格 - 包含表头信息-->
+              <th>原材料名称</th>
+              <th>材料型号</th>
+              <th>入库数量</th>
+              <th>单位</th>
+              <th>材料价格(元)</th>
+              <th>入库时间</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

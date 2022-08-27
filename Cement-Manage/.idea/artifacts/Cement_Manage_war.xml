@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="Cement-Manage:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>Cement-Manage</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="Cement-Manage.war">
+      <element id="artifact" artifact-name="Cement-Manage:war exploded" />
+    </root>
+  </artifact>
+</component>

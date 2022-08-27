@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>产品月记录</title>
+    <link rel="stylesheet" type="text/css" href="css/browse.css">
+    <script src = "js/jquery-1.7.2.min.js"> </script>
+    <!--js代码 要被执行 需要导入上面的库-->
+    <script>
+        //进入此页面 该函数立即执行
+        $(function () {
+            $.ajax({
+                url:"/Cement_Manage_war_exploded/monthgoods",
+                type:"get",
+                dataType:"json",
+                success:function (data) {
+                    console.log(data);
+                    var s=" ";
+                    for (var i = 0; i <data.length ; i++) {
+                        for (var j = 0; j < data[i].length; j++) {
+                            s+="<tr>";
+                            s+="<td>"+data[i][j].id+"</td>>";
+                            s+="<td>"+data[i][j].name+"</td>>";
+                            s+="<td>"+data[i][j].type+"</td>>";
+                            s+="<td>"+data[i][j].instock+"</td>>";
+                            s+="<td>"+data[i][j].sellstock+"</td>>";
+                            s+="<td>"+data[i][j].unit+"</td>>";
+                            s+="<td>"+data[i][j].price+"</td>>";
+                            s+="<td>"+data[i][j].createTime+"</td>>";
+                            s+="</tr>";
+                        }
+                        s+="<tr>";
+                        s+="----------------------------";
+                        s+="</tr>";
+
+                    }
+                    //console.log(s);
+                    $("#tbRecord>tbody").html(s);
+                }
+            })
+        });
+    </script>
+
+</head>
+<body>
+<div class="dvcontent">
+    <div>
+        <!--tab start-->
+        <div class="tabs" style="height: 800px; overflow:scroll">
+            <div class="hd">
+                <p class="on" style="box-sizing: initial;-webkit-box-sizing: initial;">浏览产品月记录 </p>
+                <form action="/Cement_Manage_war_exploded/goodsExportExcel" method="get">
+                    <td>月份选择：</td>
+                    <td>
+                        <input type="radio" name="monthNum" value="2" checked="checked">
+                        上月
+                        <input type="radio" name="monthNum" value="1" checked="checked">
+                        当月
+                    </td>
+                    <br>
+                    <button type="submit" class="bu">导出</button>
+                </form>
+            </div>
+            <div class="bd">
+                <div id="dv1">
+                    <!-- 规定元素的类名（classname）  规定元素的唯一 id-->
+                    <table class="table" id="tbRecord">
+                        <thead><!--<thead> 标签定义表格的表头。该标签用于组合 HTML 表格的表头内容。-->
+                        <tr><!--tr 元素包含一个或多个 th 或 td 元素。-->
+                            <th>编号</th><!--表头单元格 - 包含表头信息-->
+                            <th>产品名称</th>
+                            <th>产品型号</th>
+                            <th>月入库数量</th>
+                            <th>月售出数量</th>
+                            <th>单位</th>
+                            <th>当月总金额(元)</th>
+                            <th>日期</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

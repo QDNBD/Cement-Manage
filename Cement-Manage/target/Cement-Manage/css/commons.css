@@ -1,0 +1,104 @@
+body,h1,h2,h3,h4,h5,h6,p,dl,dd{
+    margin: 0;
+}
+body{
+    font-size: 14px;
+    color: #333;
+    font-family: "微软雅黑";
+}
+ul,ol{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+img{
+    border: none;
+    vertical-align: middle;
+}
+a{
+    text-decoration: none;
+    color: #333;
+}
+a:hover{
+    color: #b4a078;
+}
+input{
+    margin: 0;
+    padding: 0;
+    vertical-align: middle;
+    border: 1px solid #ccc;
+}
+label{
+    vertical-align: middle;
+}
+
+.center{
+    width: 1090px;
+    margin: 0 auto;
+}
+
+/*----------头部----------*/
+#head{
+    border-bottom: 1px solid #f3f3f3;
+    /*box-shadow: 0 2px 2px #f3f3f3;*/
+}
+
+/*----------导航----------*/
+.nav{
+    position: relative;
+    background: #fff;
+    width: 82%;
+    height: 50px;
+    margin-left: 9%;
+    padding-top: 18px;
+}
+.nav .center{
+    position: relative;
+}
+.navBar,.nav .subNav{
+    text-align: center;
+    font-size: 0;
+}
+.navBar li,.nav .subNav li{
+    display: inline-block;
+    font-size: 20px;
+    padding: 0 30px;
+    height: 50px;
+}
+.navBar li.separate{
+    padding: 0;
+    color: #ccc;
+}
+.navBar li a{
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+.navBar li a:hover,.navBar li.active a{
+    border-bottom: 3px solid #b4a078;
+}
+
+/*弹出的导航样式*/
+.nav .subNav{
+    box-shadow: 0 6px 6px #ececec;
+    margin-top: 2px;
+    opacity: 0;
+
+    position: absolute;
+    top: 50px;
+    z-index: 2;
+    background: #fff;
+    width: 100%;
+    transition: .3s opacity;
+}
+.nav .subNav ul{
+    display: none;
+    padding: 10px 0 20px 0;
+}
+.nav .subNav li{
+    height: auto;
+    font-size: 18px;
+}
+.nav .subNav a{
+    font-weight: bold;
+}
+

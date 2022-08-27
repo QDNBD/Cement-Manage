@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>首页</title>
+    <link rel="stylesheet" type="text/css" href="./css/indexu.css" >
+    <script src="js/plugs/move.js"></script>
+    <script>
+        window.onload=function(){
+            var leftRight=document.getElementById("left-right");
+            var ul=document.querySelector("#left-right ul");
+            var div=leftRight.querySelector("div");
+            var n=0;		//用来存储图片走的个数
+            var timer;
+
+            var textArr=[
+                {"title":'承插口水泥管道',"content":'型号: d(800mm)*L(3m)'},
+                {"title":'钢承口水泥管道',"content":'型号: d(800mm)*L(3m)'},
+                {"title":'承插口水泥管道',"content":'型号: d(2200)*L(2m)'}
+            ];
+
+            //把ul的内容复制一份
+            ul.innerHTML+=ul.innerHTML;
+
+            //把所有的li都排在一行
+            var lis=document.querySelectorAll("#left-right ul li");
+            //一个li的宽度？
+            var w=parseInt(getComputedStyle(lis[0]).width);
+            ul.style.width=w*lis.length+'px';
+
+            //把文字添加到图片上
+            div.innerHTML='<h3>'+textArr[0].title+'</h3><p>'+textArr[0].content+'</p>';
+
+            //开启一个定时器，让图片不断的走
+            timer=setInterval(pic,4000);
+            //pic();
+            function pic(){
+                n++;		//调一次函数表示图片已经走了一张了，就让它的值加个1
+                //让文字先运动到下面
+                move(div,{bottom:-90},500,'linear',function(){
+                    //当文字已经运动消失了，这个时候该运动ul
+                    move(ul,{left:-900*n},1500,'linear',function(){
+                        //当图片停止了，需要去判断这张图是不是复制那个的第一张，如果是，就把ul拉回来
+                        if(n==lis.length/2){
+                            //当条件成立的时候说明，现在是复制那个第一张已经走完了，要让ul回到0
+                            ul.style.left=0;
+                            n=0;		//需要让n的值不再累加了，让它与图片对上号
+                        }
+
+                        //在文字上去之前应该把内容改了
+                        div.innerHTML='<h3>'+textArr[n].title+'</h3><p>'+textArr[n].content+'</p>';
+                        //当ul走完了一个，这个时候需要让文字块移动上去
+                        move(div,{bottom:0},500,'linear');
+                    });
+                });
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+<div>
+    <div class="dropdown">
+        <img  src="./image/02.jpeg" class="user-cover">
+        <span class="nick-name">用户中心</span>
+        <div class="dropdown-content">
+            <p class="dropdown-content1">
+                <a href="userinfor.html" style="text-decoration: none; color: black">修改密码</a>
+            </p>
+            <p class="dropdown-content2">
+            <form action="/Cement_Manage_war_exploded/logout" method="post">
+                <button type="submit" class="bu">退出系统</button>
+            </form>
+            </p>
+        </div>
+    </div>
+    <p class="show-haead">首页</p>
+    <div class="left">
+        <div class="left-left">
+            <h2 class="icon-cog menuicon">系统菜单</h2>
+            <p class="ulleftsubitems">
+                <a href="materialadd.html">
+                    <tr>添加原材料</tr>
+                </a>
+            </p>
+            <p class="ulleftsubitems">
+                <a href="materialbrowse.html">
+                    <tr>浏览原材料入库记录</tr>
+                </a>
+            </p>
+            <p class="ulleftsubitems">
+                <a href="materialaddupdate.html">
+                    <tr>修改原材料入库记录</tr>
+                </a>
+            </p>
+            <p class="ulleftsubitems">
+                <a href="materialconsume.html">
+                    <tr>原材料出库</tr>
+                </a>
+            </p>
+            <p class="ulleftsubitems">
+                <a href="materialconsuebrowse.html">
+                    <tr>浏览原材料出库记录</tr>
+                </a>
+            </p>
+            <p class="ulleftsubitems">
+                <a href="goodsadd.html">
+                    <tr>添加产品</tr>
+                </a>
+            </p>
+
+            <p class="ulleftsubitems">
+                <a href="goodsrecordbrowse.html">
+                    <tr>浏览产品入库记录</tr>
+                </a>
+            </p>
+            <p class="ulleftsubitems">
+                <a href="goodsaddupdate.html">
+                    <tr>修改产品入库信息</tr>
+                </a>
+            </p>
+        </div>
+
+        <div class="left-right" id="left-right">
+            <ul>
+                <li><img src="image/03.jpeg" alt="" /></li>
+                <li><img src="image/04.jpeg" alt="" /></li>
+                <li><img src="image/05.jpeg" alt="" /></li>
+            </ul>
+            <div>
+                <h3></h3>
+                <p></p>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

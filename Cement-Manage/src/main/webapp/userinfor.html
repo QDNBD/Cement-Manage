@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>个人资料页</title>
+  <link  rel="stylesheet" type="text/css" href="css/userinfor.css"/>
+</head>
+<body>
+<div class="elements">
+  <div class="element-left">
+    <h1>修改密码</h1>
+    <div class="edit">
+      <form action="/Cement_Manage_war_exploded/userinfor" method="post">
+        <table>
+          <tr>
+            <td>原密码：</td>
+            <td>
+              <input type="password" name="password" placeholder="请输入原密码"/>
+            </td>
+          </tr>
+          <tr>
+            <td>新密码：</td>
+            <td>
+              <input type="password" name="password1" placeholder="请输入新密码"/>
+            </td>
+          </tr>
+
+          <tr>
+            <td>确认密码：</td>
+            <td>
+              <input type="password" name="password2" placeholder="请再次确认密码"/>
+            </td>
+          </tr>
+        </table>
+        <div class="submit">
+          <button type="submit">修改密码</button>
+        </div>
+
+      </form>
+      <div class="element-right">
+        <a href="index.html">回到首页</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="element-last">
+    <ol class="contents">
+      <h3>密码规则</h3>
+      <li class="tips">
+        密码字符长度在6——20位
+      </li>
+      <li>
+        空格不可用
+      </li>
+      <li>
+        中文字符不可用
+      </li>
+    </ol>
+  </div>
+
+</div>
+</body>
+</html>

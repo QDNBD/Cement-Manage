@@ -1,0 +1,281 @@
+ul li {
+    list-style: none;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    background: #ebf1f1;
+}
+
+h2 {
+    color: #936100;
+    background: silver;
+}
+
+.dropdown {
+    position: relative;
+    border: 1px solid white;
+    width: 10%;
+    height: 40px;
+    background: white;
+    margin-left: 75%;
+    margin-right: 15%;
+    margin-top: 25px;
+    border-radius: 17px;
+
+}
+
+.dropdown .user-cover {
+    width: 35px;
+    height: 35px;
+    border-radius: 17px;
+
+}
+
+.nick-name {
+    margin: 0 2px;
+    display: inline-block;
+    max-width: 80px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: top;
+    font-size: 16px;
+    font-weight: bold;
+    padding-top: 5px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content {
+    text-align: center;
+    border: 5px solid #e2dddd;
+    background: white;
+    font-weight: bold;
+    border-radius: 15px;
+    width: 80px;
+    height: 70px;
+    display: none;
+    position: relative;
+    min-width: 70px;
+    line-height: 0.7;
+}
+.dropdown-content1 {
+    display: block;
+    position: relative;
+    font-size: 14px;
+    padding-top: 13px;
+}
+
+.dropdown-content2 {
+    display: block;
+    position: relative;
+    margin-top: 10px;
+    background: white;
+    padding: 5px 0;
+}
+
+.bu {
+    border: 0 solid white;
+    background: white;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 15px;
+}
+
+.bu:hover {background: red}
+.bu:active {background: red}
+
+a:hover {background-color: #e7d8d8;}
+a:active {background-color: #4d7fff;}
+
+.right-text {
+    text-align: right;
+}
+
+.show-haead {
+    width: 82%;
+    height: 40px;
+    border: 1px solid yellow;
+    background: #eeead7;
+    text-align: center;
+    margin-left: 9%;
+    margin-right: 9%;
+    margin-bottom: 0;
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 28px;
+    padding-top: 10px;
+}
+
+/*侧边导航*/
+.left {
+    margin-top: 35px;
+    line-height: 3;
+    font-weight: bold;
+    text-align: center;
+    color: #151313;
+}
+
+.left-left {
+    margin-left: 9%;
+    position: relative;
+    width: 17%;
+    height: 100%;
+    border: 2px solid palegoldenrod;
+    float: left;
+}
+.left-right {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    height: 500px;
+    width: 65%;
+    border: 2px solid #ebf1f1;
+    float: left;
+}
+
+.left-left p {
+    margin: 0;
+    background: #6f897e;
+    border: 2px solid black;
+    text-align: center;
+}
+
+
+/*侧边导航*/
+.body_left {
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
+    display: inline-block;
+    background: #b39d9d;
+    float: left;
+    font-size: 16px;
+    color: #fff;
+}
+
+.side-in {
+    width: 100%;
+    height: 100%;
+}
+
+.side-in ul li {
+    font-size: 20px;
+}
+
+.scontentul {
+    display: none;
+}
+
+.scontent:hover .scontentul {
+    transition-duration: 0.5s;
+    display: block;
+}
+
+
+.scontent:hover .side-nav-item2 {
+    transition-duration: 0.5s;
+    background-color: #d0938b;
+    border-left-width: 6px;
+    border-left-style: solid;
+    border-left-color: #1d8ff0;
+    cursor: pointer;
+}
+
+.scontent:hover .cla {
+    transition-duration: 0.5s;
+    background-color: #a2adac;
+}
+
+.bi2:hover .cla {
+    transition-duration: 0.5s;
+    background-color: #3A3E50;
+}
+
+#side-nav-item1 {
+    background-color: #292E41;
+    width: 100%;
+    font-size: 25px;
+}
+
+
+.bi2:hover .side-nav-item2 {
+    transition-duration: 0.5s;
+    background-color: #151B32;
+}
+
+.cla {
+    color: gray;
+}
+
+.cla:hover {
+    color: white;
+}
+
+
+/*轮播图*/
+.left-right ul,.left-right div,.left-right p,.left-right h5{
+    margin: 0;
+    padding: 0;
+}
+
+.left-right h6, .left-right h5 {
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+.left-right {
+    text-align: left;
+    padding: 0;
+    margin: 0 30px 30px;
+    height: 450px;
+    width: 900px;
+    position: relative;
+    overflow: hidden;
+    float: left;
+}
+#left-right{
+    position: relative;
+    overflow: hidden;
+}
+#left-right ul{
+    position: absolute;
+    left: 0;
+    list-style-type: none;
+}
+#left-right li{
+    list-style: none;
+    float: left;
+}
+#left-right div{
+    height: 80px;
+    width: 900px;
+    background: rgba(0,0,0,0.6);
+    position: absolute;
+    bottom: 0;
+    color: #fff;
+    text-indent: 30px;
+}
+
+#left-right div h3 {
+    padding-top: 7px;
+    line-height: 15px;
+    font-size: 18px;
+}
+
+#left-right div p {
+    margin-left: 2em;
+    font-size: 16px;
+}

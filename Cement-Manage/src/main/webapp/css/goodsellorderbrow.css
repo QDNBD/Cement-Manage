@@ -1,0 +1,36 @@
+body {
+    background: #d8eeea;
+}
+
+table{
+    width: 1200px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background: white;
+}
+
+.table thead{
+    border: 1px solid black;
+}
+
+.table thead tr th{
+    font-size: 20px;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    border: 1px solid #99b0da;
+}
+
+th {
+    padding: 0 10px;
+    border: 1px solid pink;
+    font: 20px/50px "微软雅黑";
+    text-align: center;
+}
+
+td {
+    padding: 0 10px;
+    border: 1px solid pink;
+    font: 18px/40px "微软雅黑";
+    text-align: center;
+}

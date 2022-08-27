@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>首页</title>
+    <link rel="stylesheet" type="text/css" href="./css/index.css" >
+    <link rel="stylesheet" type="text/css" href="./css/commons.css" >
+    <script src="js/plugs/move.js"></script>
+    <script>
+        window.onload=function(){
+            var leftRight=document.getElementById("left-right");
+            var ul=document.querySelector("#left-right ul");
+            var div=leftRight.querySelector("div");
+            var n=0;
+            var timer;
+
+            var textArr=[
+                {"title":'承插口水泥管道',"content":'型号: d(800mm)*L(3m)'},
+                {"title":'钢承口水泥管道',"content":'型号: d(800mm)*L(3m)'},
+                {"title":'承插口水泥管道',"content":'型号: d(2200)*L(2m)'}
+            ];
+            ul.innerHTML+=ul.innerHTML;
+            var lis=document.querySelectorAll("#left-right ul li");
+            var w=parseInt(getComputedStyle(lis[0]).width);
+            ul.style.width=w*lis.length+'px';
+
+            div.innerHTML='<h3>'+textArr[0].title+'</h3><p>'+textArr[0].content+'</p>';
+            timer=setInterval(pic,4000);
+            function pic(){
+                n++;
+                move(div,{bottom:-90},500,'linear',function(){
+                    move(ul,{left:-900*n},1500,'linear',function(){
+                        if(n==lis.length/2){
+                            ul.style.left=0;
+                            n=0;
+                        }
+                        div.innerHTML='<h3>'+textArr[n].title+'</h3><p>'+textArr[n].content+'</p>';
+                        move(div,{bottom:0},500,'linear');
+                    });
+                });
+            }
+        }
+    </script>
+</head>
+
+<body>
+<div>
+    <div class="dropdown">
+        <img  src="./image/02.jpeg" class="user-cover">
+        <span class="nick-name">用户中心</span>
+        <div class="dropdown-content">
+            <p class="dropdown-content1">
+                <a href="userinfor.html" style="text-decoration: none; color: black">修改密码</a>
+            </p>
+            <p class="dropdown-content2">
+            <form action="/Cement_Manage_war_exploded/logout" method="post">
+                <button type="submit" class="bu">退出系统</button>
+            </form>
+
+            </p>
+        </div>
+    </div>
+    <p class="show-haead">首页</p>
+    <div class="headers-in">
+        <header id="head">
+            <nav class="nav">
+                <div class="center clearfix">
+                    <ul class="navBar">
+                        <li class="active"><a href="#">首页</a></li>
+                        <li><a href="#">原材料</a></li>
+                        <li><a href="#">产品</a></li>
+                        <li><a href="#">库存</a></li>
+                        <li><a href="#">产品出库</a></li>
+                        <li><a href="#">月账单</a></li>
+                        <li><a href="#">年账单</a></li>
+                        <li class="separate">|</li>
+                        <li><a href="userlistbrow.html">用户列表</a></li>
+                        <li><a href="register.html">用户添加</a></li>
+                    </ul>
+                </div>
+                <div class="subNav">
+                    <ul>
+                        <li><a href="materialadd.html">添加原材料</a></li>
+                        <li><a href="materialbrowse.html">浏览入库记录</a></li>
+                        <li><a href="materialaddupdate.html">修改原材料入库记录</a></li>
+                        <li><a href="materialconsume.html">原材料出库</a></li>
+                        <li><a href="materialconsuebrowse.html">原材料出库记录</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="goodsadd.html">添加产品</a></li>
+                        <li><a href="goodsrecordbrowse.html">浏览产品入库记录</a></li>
+                        <li><a href="goodsaddupdate.html">修改产品入库信息</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="materialallbrowse.html">原材料库存</a></li>
+                        <li><a href="goodsallbrowes.html">产品库存</a></li>
+                    </ul>
+                    <ul>
+                        <li><a target="_blank" href="goodsell.html">产品出库</a></li>
+                        <li><a href="goodsellorderbrow.html">查看产品出库单</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="monthmaterial.html">原材料月记录</a></li>
+                        <li><a href="monthgoods.html">产品月记录</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="yearmaterial.html">原材料年记录</a></li>
+                        <li><a href="yeargoods.html">产品年记录</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+    </div>
+    <div class="left">
+        <div class="left-left">
+            <div class="side-in">
+                <div class="body_left">
+                    <ul>
+                        <li class="sideBar"></li>
+                        <div id="side-nav-item1">
+                            <p>系统菜单</p>
+                        </div>
+                        <ul class="side-title">
+                            <li class="scontent">
+                                <div class="side-nav-item2">
+                                    原材料
+                                </div>
+                                <ul class="scontentul">
+                                    <li>
+                                        <div class="cla">
+                                            <ul>
+                                                <li><a href="materialadd.html">添加原材料</a></li>
+                                                <li><a href="materialbrowse.html">浏览入库记录</a></li>
+                                                <li><a href="materialaddupdate.html">修改原材料入库记录</a></li>
+                                                <li><a href="materialconsume.html">原材料出库</a></li>
+                                                <li><a href="materialconsuebrowse.html">原材料出库记录</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="scontent">
+                                <div class="side-nav-item2">
+                                    产品
+                                </div>
+                                <ul class="scontentul">
+                                    <li>
+                                        <div class="cla">
+                                            <ul>
+                                                <li><a href="goodsadd.html">添加产品</a></li>
+                                                <li><a href="goodsrecordbrowse.html">浏览产品入库记录</a></li>
+                                                <li><a href="goodsaddupdate.html">修改产品入库信息</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="scontent">
+                                <div class="side-nav-item2">
+                                    库存
+                                </div>
+                                <ul class="scontentul">
+                                    <li>
+                                        <div class="cla">
+                                            <ul>
+                                                <li><a href="materialallbrowse.html">原材料库存</a></li>
+                                                <li><a href="goodsallbrowes.html">产品库存</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="scontent">
+                                <div class="side-nav-item2">
+                                    产品出库
+                                </div>
+                                <ul class="scontentul">
+                                    <li>
+                                        <div class="cla">
+                                            <ul>
+                                                <li><a target="_blank" href="goodsell.html">产品出库</a></li>
+                                                <li><a href="goodsellorderbrow.html">查看产品出库单</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="scontent">
+                                <div class="side-nav-item2">
+                                    月账单
+                                </div>
+                                <ul class="scontentul">
+                                    <li>
+                                        <div class="cla">
+                                            <ul>
+                                                <li><a href="monthmaterial.html">原材料月记录</a></li>
+                                                <li><a href="monthgoods.html">产品月记录</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="scontent">
+                                <div class="side-nav-item2">
+                                    年账单
+                                </div>
+                                <ul class="scontentul">
+                                    <li>
+                                        <div class="cla">
+                                            <ul>
+                                                <li><a href="yearmaterial.html">原材料年记录</a></li>
+                                                <li><a href="yeargoods.html">产品年记录</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="left-right" id="left-right">
+            <ul>
+                <li><img src="image/03.jpeg" alt="" /></li>
+                <li><img src="image/04.jpeg" alt="" /></li>
+                <li><img src="image/05.jpeg" alt="" /></li>
+            </ul>
+            <div>
+                <h3></h3>
+                <p></p>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/common.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>

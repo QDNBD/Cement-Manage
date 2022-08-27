@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>产品出库</title>
+    <link rel="stylesheet" type="text/css" href="css/currentAll.css"/>
+  <style>
+    body {
+      background: #d8eeea;
+    }
+
+  </style>
+
+</head>
+
+<body>
+<div class="dvcontent">
+  <div>
+    <!--tab start-->
+    <div class="tabs" style="margin: 30px;">
+      <div class="hd">
+          <p class="" style="box-sizing: initial;-webkit-box-sizing: initial;">产品出库<span><a href="index.html" style="display: block; float: right">回到首页</a></span></p>
+      </div>
+      <div class="">
+        <ul>
+          <li>购买产品输入细则</li>
+          <ol>多个产品，产品ID以英文逗号,隔开;最后一个不加逗号 例如:1,2,3</ol>
+          <ol>产品数量，与ID一一对应，数量以英文逗号,隔开;最后一个不加逗号 例如:30,100,50</ol>
+          <ol>产品单价，与ID一一对应，数量以英文逗号,隔开;最后一个不加逗号 例如:700,100,200</ol>
+          <ol>购买方,仅且只有一个购买方</ol>
+        </ul>
+      </div>
+      <div class="bd">
+        <ul class="theme-popbod dform" style="display: none;">
+          <div class="am-cf admin-main" style="padding-top: 0px;">
+            <!-- content start -->
+
+            <div class="am-cf admin-main" style="padding-top: 0px;">
+              <!-- content start -->
+              <div class="admin-content">
+                <div class="admin-content-body">
+
+                  <div class="am-g">
+                    <div class="am-u-sm-12 am-u-md-4 am-u-md-push-8">
+
+                    </div>
+                    <div class="am-u-sm-12 am-u-md-8 am-u-md-pull-4"
+                         style="padding-top: 30px;">
+                      <form class="am-form am-form-horizontal"
+                            action="goodsellcom" method="post">
+                        <div class="am-form-group">
+                          <label for="goodsId" class="am-u-sm-3 am-form-label">
+                            售卖的产品ID</label>
+                          <div class="am-u-sm-9">
+                            <input type="text" id="goodsId" required
+                                   placeholder="产品ID" name="goodsId">
+                            <small>产品ID</small>
+                          </div>
+                        </div>
+                        <div class="am-form-group">
+                          <label for="goodsNum" class="am-u-sm-3 am-form-label">
+                            售卖的产品数量</label>
+                          <div class="am-u-sm-9">
+                            <input type="text" id="goodsNum" required
+                                   placeholder="产品数量" name="goodsNum">
+                            <small>产品数量</small>
+                          </div>
+                        </div>
+                        <div class="am-form-group">
+                          <label for="goodsPrice" class="am-u-sm-3 am-form-label">
+                            售卖的产品单价</label>
+                          <div class="am-u-sm-9">
+                            <input type="text" id="goodsPrice" required
+                                   placeholder="产品单价" name="goodsPrice">
+                            <small>产品单价</small>
+                          </div>
+                        </div>
+                        <div class="am-form-group">
+                          <label for="purchaser" class="am-u-sm-3 am-form-label">
+                            购买方</label>
+                          <div class="am-u-sm-9">
+                            <input type="text" id="purchaser" required
+                                   placeholder="购买方" name="purchaser">
+                            <small>购买方</small>
+                          </div>
+                        </div>
+                        <div class="am-form-group">
+                          <div class="am-u-sm-9 am-u-sm-push-3">
+                            <input type="submit" class="am-btn am-btn-success"
+                                   value="提交"/>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--tab end-->
+        </ul>
+
+        <script src="js/jquery-1.7.2.min.js" ></script>
+        <script src="js/plugs/jquery.SuperSlide.source.js"></script>
+        <script>
+          $(function () {
+            $(".tabs").slide({trigger: "click"});
+          });
+        </script>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

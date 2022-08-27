@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>修改入库产品信息</title>
+    <link rel="stylesheet" type="text/css" href="css/currentAll.css"/>
+    <style>
+        body {
+            background: #d8eeea;
+        }
+
+        .admin-content {
+            background: #d8eeea;
+        }
+
+    </style>
+
+</head>
+
+<body>
+<div class="dvcontent">
+    <div>
+        <div class="tabs" style="margin: 30px;">
+            <div class="hd">
+                <ul>
+                    <li class="" style="box-sizing: initial;-webkit-box-sizing: initial;">修改入库产品 </li>
+                </ul>
+            </div>
+            <div class="bd">
+                <ul class="theme-popbod dform" style="display: none;">
+                    <div class="am-cf admin-main" style="padding-top: 0px;">
+                        <!-- content start -->
+
+                        <div class="am-cf admin-main" style="padding-top: 0px;">
+                            <!-- content start -->
+                            <div class="admin-content">
+                                <div class="admin-content-body">
+
+                                    <div class="am-g">
+                                        <div class="am-u-sm-12 am-u-md-4 am-u-md-push-8">
+
+                                        </div>
+                                        <div class="am-u-sm-12 am-u-md-8 am-u-md-pull-4"
+                                             style="padding-top: 30px;">
+                                            <form class="am-form am-form-horizontal"
+                                                  action="goodsaddupdate" method="post">
+                                                <div class="am-form-group">
+                                                    <label for="goodRecordId" class="am-u-sm-3 am-form-label">
+                                                        需更新产品入库ID</label>
+                                                    <div class="am-u-sm-9">
+                                                        <input type="text" id="goodRecordId" required
+                                                               placeholder="产品入库ID" name="goodRecordId">
+                                                        <small>产品入库ID</small>
+                                                    </div>
+                                                </div>
+                                                <div class="am-form-group">
+                                                    <label for="name" class="am-u-sm-3 am-form-label">
+                                                        需更新产品名称</label>
+                                                    <div class="am-u-sm-9">
+                                                        <input type="text" id="name" required
+                                                               placeholder="产品名称" name="name">
+                                                        <small>产品名称</small>
+                                                    </div>
+                                                </div>
+                                                <div class="am-form-group">
+                                                    <label for="gtype" class="am-u-sm-3 am-form-label">
+                                                        需更新产品型号</label>
+                                                    <div class="am-u-sm-9">
+                                                        <input type="text" id="gtype" required
+                                                               placeholder="产品型号" name="gtype">
+                                                        <small>产品型号</small>
+                                                    </div>
+                                                </div>
+                                                <div class="am-form-group">
+                                                    <label for="stock" class="am-u-sm-3 am-form-label">
+                                                        需更新产品数量</label>
+                                                    <div class="am-u-sm-9">
+                                                        <input type="text" id="stock" required
+                                                               placeholder="产品数量" name="stock">
+                                                        <small>产品数量</small>
+                                                    </div>
+                                                </div>
+                                                <div class="am-form-group">
+                                                    <label for="unit" class="am-u-sm-3 am-form-label">
+                                                        需更新产品单位</label>
+                                                    <div class="am-u-sm-9">
+                                                        <input type="text" id="unit" required
+                                                               placeholder="单位" name="unit">
+                                                        <small>单位</small>
+                                                    </div>
+                                                </div>
+                                                <div class="am-form-group">
+                                                    <div class="am-u-sm-9 am-u-sm-push-3">
+                                                        <input type="submit" class="am-btn am-btn-success"
+                                                               value="更新提交"/>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--tab end-->
+                </ul>
+
+                <script src="js/jquery-1.7.2.min.js" ></script>
+                <script src="js/plugs/jquery.SuperSlide.source.js"></script>
+                <script>
+                    $(function () {
+                        $(".tabs").slide({trigger: "click"});
+                    });
+                </script>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

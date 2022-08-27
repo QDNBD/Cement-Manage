@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户列表</title>
+  <style>
+    body {
+      background: #d8eeea;
+    }
+
+    table{
+      width: 1200px;
+      margin: 0 auto;
+      border-collapse: collapse;
+      background: white;
+    }
+
+    .table thead{
+      border: 1px solid black;
+    }
+
+    .table thead tr th{
+      font-size: 20px;
+      padding: 5px;
+      text-align: center;
+      text-decoration: none;
+      border: 1px solid #99b0da;
+    }
+
+    th {
+      padding: 0 10px;
+      border: 1px solid pink;
+      font: 20px/50px "微软雅黑";
+      text-align: center;
+    }
+
+    td {
+      padding: 0 10px;
+      border: 1px solid pink;
+      font: 18px/40px "微软雅黑";
+      text-align: center;
+    }
+
+  </style>
+  <script src = "js/jquery-1.7.2.min.js"> </script>
+  <!--js代码 要被执行 需要导入上面的库-->
+  <script>
+    //进入此页面 该函数立即执行
+    $(function () {
+      $.ajax({
+        url:"/Cement_Manage_war_exploded/userlist",
+        type:"get",
+        dataType:"json",
+        success:function (data) {
+          console.log(data);
+          var s=" ";
+          for (var i = 0; i <data.length ; i++) {
+            s+="<tr>";
+            s+="<td>"+data[i].id+"</td>>";
+            s+="<td>"+data[i].username+"</td>>";
+            s+="<td>"+data[i].utype+"</td>>";
+            s+="<td>"+data[i].nickname+"</td>>";
+            s+="<td>"+data[i].email+"</td>>";
+            s+="<td>"+data[i].sex+"</td>>";
+            s+="<td>"+data[i].age+"</td>>";
+            s+="<td>"+data[i].createTime+"</td>>";
+            s+="<td class=\"delete\"><button onclick=\"deleteInfo('"+data[i].id+"')\"><i class=\"icon-trash bigger-120\"></i>删除</button></td>";
+            s+="</tr>";
+          }
+          console.log(s);
+          $("#tbRecord>tbody").html(s);
+        }
+      })
+    });
+
+    function deleteInfo(obj) {
+      console.log(obj);
+      if (obj!=null){
+        $.ajax({
+          url:"/Cement_Manage_war_exploded/delUSer",
+          type:"post",
+          data:{"id":obj},
+          success:function () {
+            alert("删除成功！");
+            window.location.reload();
+          },
+          error:function () {
+            alert("请求失败！");
+          },
+          dataType:"text"
+        })
+      }
+    }
+  </script>
+
+</head>
+<body>
+<div class="dvcontent">
+  <div>
+    <!--tab start-->
+    <div class="tabs" style="height: 800px; overflow:scroll">
+      <div class="hd">
+        <p class="on" style="box-sizing: initial;-webkit-box-sizing: initial; text-align: center; font-size: 20px; font-weight: bold">用户列表</p>
+      </div>
+      <div class="bd">
+        <div id="dv1">
+          <table class="table" id="tbRecord">
+            <thead>
+            <tr>
+              <th>编号</th>
+              <th>手机号</th>
+              <th>账号类型(1:管理员，2:用户)</th>
+              <th>别名</th>
+              <th>邮箱</th>
+              <th>性别</th>
+              <th>年龄</th>
+              <th>创建时间</th>
+              <th>删除账户</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
